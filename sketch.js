@@ -1,4 +1,4 @@
-let data = "Enter password";
+let myText = "Enter password";
 let myImage;
 let inp;
 
@@ -8,21 +8,28 @@ function preload(){
 
 function setup() {
   createCanvas(windowWidth,windowHeight);
-  background("black");
-
-  //typerwriter text
-  typeWriter(data, 0, windowWidth / 2, windowHeight / 2, 40);
+  background(0, 128, 130);
 
   //input text pin
   let inp = createInput('');
   inp.input(myInputEvent);
-  inp.position(windowWidth / 2, windowHeight / 2);
+  inp.position(windowWidth / 2 - inp.width / 2, windowHeight * 3.4/5);
 
 }
 
+
 function draw() {
 imageMode(CENTER);
-image(myImage, windowWidth / 2, windowHeight / 2, myImage.width * 1.5, myImage.height * 1.5);
+image(myImage, windowWidth / 2, windowHeight / 2, myImage.width / 2, myImage.height / 2);
+
+push();
+textFont("Arimo");
+stroke("black")
+strokeWeight(0.1)
+textSize(17);
+fill("black");
+text(myText, windowWidth / 2.15, windowHeight * 3.35/5);
+pop();
 }
 
 //enter to unlock
@@ -34,19 +41,4 @@ function keyPressed() {
 
   function myInputEvent() {
   //console.log("typing", this.value());
-}
-
-//typewriter
-function typeWriter(sentence, n, x, y, speed) {
-  if (n < (sentence.length)) {
-    text(sentence.substring(0, n + 1), x, y);
-    n++;
-    textFont("Arimo");
-    textSize(20);
-    fill("white");
-
-    setTimeout(function() {
-      typeWriter(sentence, n, x, y, speed)
-    }, speed);
-  }
 }
