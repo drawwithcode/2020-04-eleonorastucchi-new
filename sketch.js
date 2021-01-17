@@ -1,17 +1,14 @@
-// let buttonEnter;
-// let myText = "ENTER"
 let data = "Enter password";
 let myImage;
 let inp;
 
-
 function preload(){
-
+  myImage = loadImage("./assets/images/myimage.png");
 }
 
 function setup() {
   createCanvas(windowWidth,windowHeight);
-  myImage = loadImage("./assets/images/myimage.png");
+  background("black");
 
   //typerwriter text
   typeWriter(data, 0, windowWidth / 2, windowHeight / 2, 40);
@@ -33,6 +30,7 @@ function keyPressed() {
   if (keyCode == ENTER) {
     window.open("index1.html", "_self");
   }
+  }
 
   function myInputEvent() {
   //console.log("typing", this.value());
@@ -51,5 +49,4 @@ function typeWriter(sentence, n, x, y, speed) {
       typeWriter(sentence, n, x, y, speed)
     }, speed);
   }
-}
 }
