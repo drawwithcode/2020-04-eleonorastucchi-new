@@ -20,7 +20,7 @@ function setup() {
 //buttonIcon
 push();
 buttonIcon = createButton("Create your background image");
-buttonIcon.position(windowWidth / 2 - buttonIcon.width / 2, windowHeight / 1.65 - buttonIcon.height / 2);
+buttonIcon.position(windowWidth / 2.04 - buttonIcon.width / 2, windowHeight / 1.55 - buttonIcon.height / 2);
 buttonIcon.mousePressed(newSketch1);
 pop();
 }

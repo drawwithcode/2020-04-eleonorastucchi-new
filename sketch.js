@@ -19,13 +19,20 @@ function setup() {
 
 
 function draw() {
+
+  push();
+  fill(0, 128, 130);
+  noStroke();
+  rect(windowWidth / 2.2, windowHeight * 3.25/5, 150, 30)
+  pop();
+
 imageMode(CENTER);
 image(myImage, windowWidth / 2, windowHeight / 2, myImage.width / 2, myImage.height / 2);
 
 push();
 textFont("Arimo");
 stroke("black")
-strokeWeight(0.1)
+strokeWeight(0.7)
 textSize(17);
 fill("black");
 text(myText, windowWidth / 2.15, windowHeight * 3.35/5);
