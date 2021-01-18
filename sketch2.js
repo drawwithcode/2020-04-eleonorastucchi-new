@@ -102,5 +102,5 @@ pop();
 }
 
 function printBackground() {
-save(pg, "test.png");
+save(pg, "NewBackground.png");
 }
