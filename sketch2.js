@@ -5,33 +5,33 @@ let h, s, b;
 let pg;
 let slide;
 
-function preload(){
-paint = loadImage("./assets/images/paint.png");
+function preload() {
+  paint = loadImage("./assets/images/paint.png");
 }
 
 function setup() {
-createCanvas(windowWidth, windowHeight);
-pg = createGraphics(windowWidth, windowHeight);
+  createCanvas(windowWidth, windowHeight);
+  pg = createGraphics(windowWidth, windowHeight);
 
-background(h, s, b);
+  background(h, s, b);
 
   colorMode(HSB);
-      //create the sliders
-      hSlide = createSlider(0, 360, 360);
-      sSlide = createSlider(0, 100, 80);
-      bSlide = createSlider(0, 100, 80);
-      slide = createSlider(0, 70, 20);
+  //create the sliders
+  hSlide = createSlider(0, 360, 360);
+  sSlide = createSlider(0, 100, 100);
+  bSlide = createSlider(0, 100, 0);
+  slide = createSlider(0, 70, 20);
 
-      //position the sliders
-      hSlide.position(windowWidth / 150, windowHeight * 3 / 20);
-      sSlide.position(windowWidth / 150, windowHeight * 6 / 20);
-      bSlide.position(windowWidth / 150, windowHeight * 9 / 20);
-      slide.position(windowWidth / 150, windowHeight * 12 / 20);
+  //position the sliders
+  hSlide.position(windowWidth / 150, windowHeight * 3 / 20);
+  sSlide.position(windowWidth / 150, windowHeight * 6 / 20);
+  bSlide.position(windowWidth / 150, windowHeight * 9 / 20);
+  slide.position(windowWidth / 150, windowHeight * 12 / 20);
 
-      // variables to hold the color
-      h = 180;
-      s = 50;
-      b = 50;
+  // variables to hold the color
+  h = 180;
+  s = 50;
+  b = 50;
 
   p1 = createP("Move the sliders to customize the canvas");
   p1.position(windowWidth / 2.5, windowHeight * 9.1 / 10);
@@ -53,46 +53,46 @@ background(h, s, b);
 
   push();
   myButton = createButton("Save");
-  myButton.position(windowWidth/21-myButton.width/2, windowHeight*8/9-myButton.height/2);
+  myButton.position(windowWidth / 21 - myButton.width / 2, windowHeight * 8 / 9 - myButton.height / 2);
   myButton.mousePressed(printBackground);
   pop();
 
-  }
+}
 
 function draw() {
 
-push();
+  push();
   h = hSlide.value();
   s = sSlide.value();
   b = bSlide.value();
 
   pg.background(h, s, b);
-pop();
+  pop();
 
-for (let scl = 0; scl < slide.value(); scl++) {
+  for (let scl = 0; scl < slide.value(); scl++) {
 
-image(pg, windowWidth / 2, windowHeight / 2);
+    image(pg, windowWidth / 2, windowHeight / 2);
 
-push();
+    push();
     pg.noFill();
     pg.strokeWeight(1);
     pg.stroke("white");
     pg.ellipse(windowWidth / 2, windowHeight / 2.1, scl * 10, scl * 10);
-pop();
+    pop();
 
-push();
+    push();
     pg.noFill();
     pg.strokeWeight(1);
     pg.stroke("black");
     pg.ellipse(windowWidth / 3, windowHeight / 2.1, scl * 10, scl * 10);
-pop();
+    pop();
 
-push();
+    push();
     pg.noFill();
     pg.strokeWeight(1);
     pg.stroke("black");
     pg.ellipse(windowWidth / 1.5, windowHeight / 2.1, scl * 10, scl * 10);
-pop();
+    pop();
 
   }
 
@@ -102,5 +102,5 @@ pop();
 }
 
 function printBackground() {
-save(pg, "NewBackground.png");
+  save(pg, "NewBackground.png");
 }
