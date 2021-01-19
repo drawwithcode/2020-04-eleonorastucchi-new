@@ -35,3 +35,7 @@ function draw() {
 function newSketch1() {
   window.open("index2.html", "_self");
 }
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}

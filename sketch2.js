@@ -101,6 +101,10 @@ function draw() {
 
 }
 
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
+
 function printBackground() {
   save(pg, "NewBackground.png");
 }

@@ -49,3 +49,7 @@ function keyPressed() {
 function myInputEvent() {
 
 }
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
