@@ -27,7 +27,7 @@ function setup() {
 
 function draw() {
   imageMode(CENTER);
-  image(gray_bar, windowWidth / 2, windowHeight * 25 / 26, gray_bar.width / 2.79, gray_bar.height / 2.79);
+  image(gray_bar, windowWidth / 2, windowHeight * 25 / 26, windowWidth, gray_bar.height / 2.79);
   image(icon, windowWidth / 2, windowHeight / 2, icon.width / 2, icon.height / 2);
 }
 
